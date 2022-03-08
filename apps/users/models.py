@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     last_name = models.CharField(
         "Apellidos", max_length=255, blank=True, null=True)
     image = models.ImageField("Imagen de perfil", upload_to='perfil/',
-                              height_field=True, width_field=True, max_length=255)
+                              height_field=True, width_field=True, max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     historial = HistoricalRecords()
